@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="ieung">
+  <meta name="date" content="2023.01.02">
+    <meta name="discription" content="JPA 회원상세보기 페이지">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <title>인텔리제이_회원가입</title>
+</head>
+<body>
+  <table>
+    <caption>회원상세보기</caption>
+    <tr>
+      <th>아이디</th>
+      <td>[[${view.memId}]]</td>
+    </tr>
+
+    <tr>
+      <th>비밀번호</th>
+      <td>[[${view.memPw}]]</td>
+    </tr>
+
+    <tr>
+      <th>이름</th>
+      <td>[[${view.memName}]]</td>
+    </tr>
+
+    <tr>
+      <th colspan="2">
+        <!-- /modify?idx=1 -->
+        <!-- <button th:onclick="|location.href='@{modify(idx=${view.idx})}'|">수정</button>-->
+
+        <!-- /modify/2 -->
+        <button th:onclick="|location.href='@{/modify}/${view.idx}'|">수정</button>
+
+
+        <button th:onclick="|location.href='@{/delete}/${view.idx}'|">삭제</button>
+      </th>
+    </tr>
+  </table>
+
+</body>
+</html>

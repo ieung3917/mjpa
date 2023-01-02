@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="ieung">
+    <meta name="date" content="2023.01.02">
+    <meta name="discription" content="JPA 회원 리스트">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
+    <title>인텔리제이_회원가입</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>회원번호</th>
+            <th>아이디</th>
+            <th>비밀번호</th>
+            <th>이름</th>
+        </tr>
+
+        <tr th:each="list : ${memberList}">
+
+            <td th:text="${list.idx}">회원번호</td>
+            <td><a th:text="${list.memId}" th:href="@{|/view/${list.idx}|}">아이디</a></td>
+            <td th:text="${list.memPw}">비밀번호</td>
+            <td th:text="${list.memName}">이름</td>
+        </tr>
+    </table>
+</body>
+</html>
